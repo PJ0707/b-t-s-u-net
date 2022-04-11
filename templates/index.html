@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+ <meta charset="utf-8">
+ <meta content="width=device-width, initiascale=1.0" name="viewport">
+ <title>Brain_Tumor_Segmentation</title>
+ <meta content="" name="descriptison">
+ <meta content="" name="keywords">
+
+ <link href="w3.css" rel="stylesheet">
+<style>
+ .box
+ { 
+ padding-left:100px;
+ background-color:transparent; 
+ align-self:center; 
+ 
+ 
+ } 
+ .cloud
+ { 
+ margin-top: 100px;
+ display: block; 
+ margin-left:50px; 
+ margin-right: auto; 
+ padding-left:10px;
+ width: 50%; 
+ height: 140px; 
+ } 
+body
+ { 
+ padding-bottom:100px;
+ background-image:url("o.jpg");
+ background-size:cover;
+ background-position:center;
+
+ } 
+ .h{
+    color:black;
+    font-family:serifs;
+    padding-left:450px;
+ }
+ 
+</style>
+
+</head>
+<body>
+<h1 class="h">Brain Tumor Segmentation</h1>
+<div class="container">
+ <div class="row">
+ <div class="mx-auto" style="width:500px;">
+ <div class="box">
+
+ <h1 style="color:white;padding-top: 80px;">Upload the MRI image</h1>
+<img class="cloud" src="https://th.bing.com/th/id/OIP.ku0r17uZfwnwD5C8lcxpwgAAAA?pid=ImgDet&rs=1">
+<form class="w3-container" method="POST" enctype="multipart/form-data">
+ <p style="padding-left: 15%;background colour:white;" ><input type="file" name="file" ></p>
+
+
+ <p style="padding-left:50% ;"> <button class="w3-button w3-black w3-hover-green" name="submit">Predict</button></p>
+ </div> 
+ </div> 
+ </div>
+</div>
+
+{{% if prediction %}
+
+  <img src="{{seg_path}}" height="auto" width="100%"/>
+
+	{% endif %}
+
+</body>
+</html>
